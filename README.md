@@ -48,6 +48,45 @@ Then open: http://localhost:3000
 - v3: OEM integrations and security hardening
 
 ## Structure
+
+## OEM Pitch (GM × NVIDIA) — One-Pager
+
+### Problem
+Fleet efficiency and battery/engine health degrade in real-world driving due to heat, load, and behavior. OEMs need real-time, on-device guidance to improve range, TCO, and uptime.
+
+### Solution
+NeuroPulse Auto analyzes live telemetry and recommends gentle adjustments (throttle/shift/HVAC) to optimize efficiency and thermal health. Works cloud or edge; designed to run on NVIDIA DRIVE/Jetson with TensorRT in v2+.
+
+### Why Now
+- EV/Hybrid adoption and thermal constraints
+- GPU edge acceleration is mature (DRIVE, Jetson)
+- OEM software platforms (e.g., Ultifi) open the door to over-the-air features
+
+### Technical Fit
+- **Edge SDK:** Node/JS API today; convert rules/ML to **TensorRT** runtime for on-device inference
+- **Data Loop:** Telemetry → scoring → recommendations → driver/ECU actuation (OEM-approved)
+- **Interfaces:** REST + WebSocket; planned CAN/ADCU, DriveWorks integration
+
+### Privacy & Security
+- Per-VIN scoped data, anonymized analytics
+- TLS in transit; signed model packages; OEM key rotation
+
+### Monetization
+- **Per-vehicle API license** (volume tiers)
+- **Edge SDK licensing** with OEM rev-share
+- **Dashboard Pro**: alerts, geofence rules, batch export, SLA
+
+### Pilot Plan (90 days)
+- **Phase 1 (Weeks 1-3):** OEM data spec + simulator alignment; KPIs defined
+- **Phase 2 (Weeks 4-8):** v1 model/rules on test rigs; thermal/efficiency A/B
+- **Phase 3 (Weeks 9-12):** Edge build on NVIDIA hardware; report + next steps
+
+### KPIs
+- +5–10% efficiency on representative cycles
+- −10–20% thermal events under load/ambient stress
+- Driver compliance ≥70% for soft recommendations
+Add GM × NVIDIA pitch section to README
+
 ```
 neuropulse_auto_starter/
 ├─ public/
