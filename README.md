@@ -1,4 +1,5 @@
 # NeuroPulse Auto — Starter (GM/NVIDIA concept MVP)
+🚀 Project by Rod — Testing GitHub workflow
 
 A clean, minimal MVP scaffold for a **vehicle telemetry optimization** service:
 - **Ingest** simulated vehicle telemetry (speed, rpm, coolant temp, battery, gps)
